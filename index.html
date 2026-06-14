@@ -3,186 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airsoft Tech & Paint Projekt</title>
+    <title>fegyverfestes.hu - Tactical Tech & Design</title>
     <style>
+        /* Prémium Matt Fekete & Bronz fegyveres dizájn */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Impact', 'Arial Black', sans-serif; /* Keményebb, katonai jellegű címek */
         }
 
         body {
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #0d0d0d; /* Ultra sötét matt fekete */
+            color: #bcbcbc;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Szövegnek olvashatóbb */
             line-height: 1.6;
         }
 
+        /* Fejléc */
         header {
-            background-color: #1a1a1a;
-            padding: 20px;
+            background-color: #121212;
+            padding: 50px 20px;
             text-align: center;
-            border-bottom: 3px solid #ff6600;
+            border-bottom: 2px solid #c5a059; /* Prémium fegyver-bronz/arany szín */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
         header h1 {
-            color: #ff6600;
-            font-size: 24px;
-            letter-spacing: 2px;
+            color: #ffffff;
+            font-size: 42px;
+            letter-spacing: 3px;
+            text-transform: lowercase; /* Mivel a webcím kisbetűs */
+            font-family: 'Impact', sans-serif;
+        }
+
+        header h1 span {
+            color: #c5a059;
         }
 
         header p {
             font-size: 14px;
-            color: #888;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 10px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: bold;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
+        /* Hero / Bemutatkozás */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1595590424283-b8f17842773f?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover;
-            padding: 40px 20px;
+            background-color: #141414;
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 4px;
             text-align: center;
-            border-radius: 8px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
         }
 
         .hero h2 {
             color: #fff;
             margin-bottom: 15px;
-            font-size: 24px;
+            font-size: 26px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .hero p {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
-            color: #ccc;
+            color: #8aa0a6;
+            color: #999;
+            font-size: 15px;
         }
 
+        /* Szekció címek */
         .section-title {
-            color: #ff6600;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
+            color: #ffffff;
+            font-size: 22px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            font-size: 18px;
+            margin-bottom: 30px;
+            border-left: 5px solid #c5a059;
+            padding-left: 15px;
         }
 
-        .services {
+        /* Kártyák rácsa */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
         }
 
         .card {
-            background-color: #1a1a1a;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid #ff6600;
+            background-color: #141414;
+            border: 1px solid #1f1f1f;
+            padding: 35px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #c5a059;
+            background-color: #161616;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
 
         .card h3 {
-            color: #fff;
-            margin-bottom: 10px;
+            color: #c5a059;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
+        .card p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Galéria */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
         }
 
         .gallery-item {
-            background-color: #222;
-            height: 200px;
-            border-radius: 6px;
+            background-color: #111;
+            height: 240px;
+            border: 1px solid #222;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #555;
-            border: 2px dashed #333;
-            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #444;
+            transition: all 0.3s;
         }
 
-        .gallery-item::before {
-            content: "Saját fotó helye";
-            color: #666;
+        .gallery-item:hover {
+            border-color: #c5a059;
+            color: #c5a059;
+            background-color: #141414;
         }
 
-        .info-box {
-            background-color: #1a1a1a;
-            padding: 25px;
-            border-radius: 8px;
+        /* Információs / Biztonsági doboz */
+        .status-box {
+            background-color: #121212;
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 4px;
             text-align: center;
-            border: 1px solid #333;
+            border-top: 4px solid #c5a059;
         }
 
-        .info-box p {
-            margin-bottom: 10px;
+        .status-box h3 {
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            font-size: 22px;
         }
 
+        .status-box p {
+            max-width: 750px;
+            margin: 0 auto 25px auto;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .location-badge {
+            display: inline-block;
+            background-color: #1c1a17;
+            color: #c5a059;
+            padding: 10px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            border: 1px solid #c5a059;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Lábléc */
         footer {
             text-align: center;
-            padding: 30px;
-            color: #555;
+            padding: 40px;
+            color: #444;
             font-size: 12px;
+            border-top: 1px solid #121212;
             margin-top: 60px;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>AIRSOFT DIY TECH PROJECT</h1>
-        <p>Saját építések, egyedi festések és elektronikai kísérletek</p>
+        <h1>fegyverfestes<span>.hu</span></h1>
+        <p>Tactical Paintwork & Hardware Lab</p>
     </header>
 
     <div class="container">
 
         <section class="hero">
-            <h2>Üdv a hobbi oldalunkon!</h2>
-            <p>Két airsoft-kedvelő srác technikai blogja és portfóliója. Itt gyűjtjük össze a saját magunknak készített custom festéseket, MOSFET kísérleteket és egyéb belső tuning megoldásokat.</p>
+            <h2>Saját Projekt Portfólió</h2>
+            <p>Két airsoft tech-rajongó privát blogja és referencia oldala. Itt dokumentáljuk a saját részre készített egyedi fegyverfestéseinket, MOSFET/ETU elektronikai kísérleteinket és egyedi akkumulátor megoldásainkat. Nem nyújtunk nyilvános vagy kereskedelmi szolgáltatást.</p>
         </section>
 
-        <h2 class="section-title">Amikkel kísérletezünk</h2>
-        <section class="services">
+        <h2 class="section-title">Fejlesztési Irányok</h2>
+        <section class="grid">
             <div class="card">
-                <h3>Custom Paint</h3>
-                <p>Különböző maszkolási, koptatási és terepminta-festési technikák kipróbálása saját fegyvertesteken.</p>
+                <h3>Custom Paintwork</h3>
+                <p>Koptatott effektek, álcafestések (Camo), stenciles és texturált felületkezelési technikák modellezése. Kizárógal külső, esztétikai módosítások.</p>
             </div>
             <div class="card">
-                <h3>Saját MOSFET / ETU</h3>
-                <p>Egyedi áramkörök tervezése és tesztelése a gyorsabb elsütő-reakció és a LiPo akku védelem érdekében.</p>
+                <h3>Custom ETU & MOSFET</h3>
+                <p>Saját tervezésű NYÁK-lapok, mikrokontrolleres vezérlések és alacsony belső ellenállású FET-ek tesztelése a maximális tűzgyorsaságért.</p>
             </div>
             <div class="card">
-                <h3>Akku összeállítások</h3>
-                <p>Különböző cellák összeépítése és tesztelése egyedi méretű tusokhoz és akkutartókhoz.</p>
+                <h3>Powercells</h3>
+                <p>Magas kisütési áramú cellák ponthegesztése és belső védelmi áramkörök finomhangolása egyedi tusokhoz és akkutartókhoz.</p>
             </div>
         </section>
 
-        <h2 class="section-title">Elkészült saját projektek (Galéria)</h2>
+        <h2 class="section-title">Saját Építések Galériája</h2>
         <section class="gallery">
-            <div class="gallery-item"></div>
-            <div class="gallery-item"></div>
-            <div class="gallery-item"></div>
-            <div class="gallery-item"></div>
+            <div class="gallery-item">[ Projekt fotó #01 ]</div>
+            <div class="gallery-item">[ Projekt fotó #02 ]</div>
+            <div class="gallery-item">[ Projekt fotó #03 ]</div>
+            <div class="gallery-item">[ Projekt fotó #04 ]</div>
         </section>
 
-        <h2 class="section-title">Információ</h2>
-        <section class="info-box">
-            <p>Ez az oldal egy **személyes hobbi portfólió**, nem webáruház és nem gazdasági tevékenység.</p>
-            <p>Kereskedelmi szolgáltatást nem nyújtunk. Ha kérdésed van a saját építéseinkkel kapcsolatban, vagy összefutnál velünk dumálni egyet a technikai részletekről, megtalálsz minket a hétvégi játékokon a helyi airsoft pályán!</p>
+        <h2 class="section-title">Kapcsolat & Információ</h2>
+        <section class="status-box">
+            <h3>Személyes Konzultáció</h3>
+            <p>
+                Az oldal kizárólag bemutató jelleggel működik, közvetlen online értékesítést vagy csomagküldést nem folytatunk. Ha érdekelnek a technikai részletek, a felhasznált festékek típusa vagy a kapcsolási rajzok, keress meg minket személyesen a hétvégi játékokon a kijelölt bázisunkon:
+            </p>
+            <div class="location-badge">[ IDE ÍRD A PÁLYA NEVÉT ]</div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Airsoft DIY Tech. Kizárólag bemutató jelleggel.</p>
+        <p>&copy; 2026 fegyverfestes.hu | Minden replika a jogszabályoknak megfelelő, 7.5J alatti játékfegyver.</p>
     </footer>
 
 </body>
