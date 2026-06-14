@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Airsoft Tech & Paint</title>
+    <style>
+        /* Alapbeállítások - Modern sötét dizájn */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Navigáció */
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #ff6600;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            color: #ff6600;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Fő konténer */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hős szekció (Bemutatkozás) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1595590424283-b8f17842773f?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #ccc;
+        }
+
+        /* Szekció címek */
+        .section-title {
+            color: #ff6600;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        /* Szolgáltatások / Tech részletek */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6600;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* Portfólió Galéria helye */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-item {
+            background-color: #222;
+            height: 200px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            border: 2px dashed #333;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ide jönnek majd a saját képeitek (placeholder színezés helyett) */
+        .gallery-item::before {
+            content: "Kép helye";
+            color: #888;
+        }
+
+        /* Hol találsz meg minket? */
+        .location-box {
+            background-color: #1e251f; /* Enyhe zöldes-katonai beütés */
+            border: 1px solid #2e3b2f;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .location-box h3 {
+            color: #4caf50;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .notice {
+            background-color: #2b1d1d;
+            border: 1px solid #5c2323;
+            color: #ff8888;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        /* Lábléc */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 12px;
+            background-color: #1a1a1a;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CUSTOM AIRSOFT TECH</h1>
+        <p>Egyedi külső festés & Saját fejlesztésű elektronika</p>
+    </header>
+
+    <div class="container">
+
+        <section class="hero">
+            <h2>Hozzuk ki a maximumot a replikádból!</h2>
+            <p>Két fiatal airsoft-rajongó tech-műhelye. Nem tömegtermékeket gyártunk: egyedi fegyverfestéssel és saját tervezésű MOSFET/ETU elektronikákkal foglalkozunk, hogy a fegyvered verhetetlen legyen a pályán.</p>
+        </section>
+
+        <h2 class="section-title">Amit vállalunk / Fejlesztéseink</h2>
+        <section class="services">
+            <div class="card">
+                <h3>Custom Külső Festés</h3>
+                <p>Koptatott terepminták, egyedi színkombinációk és precíz maszkolásos technikák. Minden festés egyedi projekt, nincs két ugyanolyan darab.</p>
+            </div>
+            <div class="card">
+                <h3>Saját MOSFET & ETU</h3>
+                <p>Saját tervezésű és építésű elektronikai áramkörök. Gyorsabb elsütő-reakció, akkumulátor-védelem és extrém áramtűrés a legdurvább LiPo-khoz is.</p>
+            </div>
+            <div class="card">
+                <h3>Custom Akku Pakkok</h3>
+                <p>Minőségi cellákból, professzionális ponthegesztéssel összeállított egyedi akkumulátorok, amik pontosan beférnek a fegyveragyba vagy a tusba.</p>
+            </div>
+        </section>
+
+        <h2 class="section-title">Eddigi munkáink (Portfólió)</h2>
+        <section class="gallery">
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+        </section>
+
+        <h2 class="section-title">Kapcsolat & Átvétel</h2>
+        <section class="location-box">
+            <h3>Személyesen a pályán!</h3>
+            <p>Webshopunk és postai kiszállításunk <strong>nincs</strong>.</p>
+            <p style="margin-top: 10px;">A kész termékeinket megtekintheted, kipróbálhatod és átveheted a következő helyszínen:</p>
+            <p style="color: #fff; font-weight: bold; margin: 15px 0; font-size: 18px;">[IDE ÍRJÁTOK A PÁLYA NEVÉT]</p>
+            <p>Ha egyedi festést vagy elektronika beépítést szeretnél, keress meg minket kint a szombati játékokon egy egyeztetésre!</p>
+
+            <div class="notice">
+                <strong>⚠️ Jogi nyilatkozat:</strong> Oldalunk kizárólag bemutató (portfólió) jelleggel működik, közvetlen értékesítést vagy online kereskedelmet nem folytat. Kizárólag a hatályos magyar jogszabályoknak megfelelő, 7,5 Joule torkolati energia alatti, lőfegyvernek nem minősülő airsoft játékfegyverek (légfegyverek) esztétikai és belső tuningolásával foglalkozunk.
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Custom Airsoft Tech. Minden jog fenntartva. | Készült a közösség számára.</p>
+    </footer>
+
+</body>
+</html>
