@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fegyverfestes.hu // Core Tech</title>
+    <title>fegyverfestes.hu // Tactical Shop & Tech</title>
     <style>
-        /* Ultra-prémium taktikai matt fekete és fegyver-bronz */
+        /* Matt fekete, fegyver-bronz taktikai webshop dizájn */
         * {
             margin: 0;
             padding: 0;
@@ -27,161 +27,244 @@
             background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
         }
 
-        /* Felső design sáv */
         .top-bar {
             width: 100%;
             height: 4px;
             background: linear-gradient(90deg, #3a2f1d 0%, #b88e42 50%, #3a2f1d 100%);
         }
 
-        /* Aszmetrikus Elrendezés (Split Screen) */
-        .main-layout {
+        /* Webshop Layout split screen */
+        .shop-layout {
             display: grid;
-            grid-template-columns: 350px 1fr;
+            grid-template-columns: 320px 1fr;
             min-height: 100vh;
         }
 
-        /* Bal oldali fix sáv (Márka és Infó) */
-        .sidebar {
-            background-color: rgba(13, 13, 17, 0.95);
-            border-right: 1px solid #1a1a24;
-            padding: 40px;
+        /* BAL OLDAL: Navigáció, Kereső és Szűrők */
+        .shop-sidebar {
+            background-color: rgba(13, 13, 17, 0.98);
+            border-right: 1px solid #16161f;
+            padding: 40px 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .brand h1 {
+        .logo h1 {
             color: #ffffff;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: lowercase;
             font-family: 'Arial Black', sans-serif;
         }
 
-        .brand h1 span {
+        .logo h1 span {
             color: #b88e42;
-            text-shadow: 0 0 20px rgba(184, 142, 66, 0.3);
         }
 
-        .brand p {
+        .logo p {
             font-size: 10px;
             color: #5e6669;
             text-transform: uppercase;
             letter-spacing: 4px;
-            margin-top: 8px;
-            font-weight: 700;
+            margin-top: 5px;
+            margin-bottom: 40px;
         }
 
-        .sidebar-footer {
-            font-size: 11px;
-            color: #3e4445;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Jobb oldali görgethető tartalom */
-        .content-area {
-            padding: 60px;
-            max-width: 900px;
-        }
-
-        .hero-text {
-            font-size: 16px;
-            color: #7e8587;
-            margin-bottom: 50px;
-            border-left: 3px solid #b88e42;
-            padding-left: 20px;
-        }
-
-        /* Szekció címek */
-        .section-title {
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            color: #b88e42;
-        }
-
-        /* Divíziók (Rács) */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-
-        .card {
-            background-color: rgba(13, 13, 17, 0.8);
+        /* Kamu Kereső és Szűrők a shop érzésért */
+        .search-box {
+            background-color: #050507;
             border: 1px solid #16161f;
-            padding: 25px;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-
-        .card:hover {
-            border-color: #b88e42;
-            box-shadow: 0 10px 20px rgba(184, 142, 66, 0.05);
-        }
-
-        .card h3 {
-            color: #ffffff;
-            font-size: 16px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        /* Kiemelt kiegészítő lista */
-        .addon-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .addon-list li {
+            padding: 10px;
+            color: #5e6669;
             font-size: 13px;
-            color: #b88e42;
-            margin-bottom: 5px;
-            padding-left: 15px;
-            position: relative;
+            border-radius: 4px;
+            margin-bottom: 30px;
         }
 
-        .addon-list li::before {
-            content: '>';
-            position: absolute;
-            left: 0;
+        .filter-group h4 {
+            color: #fff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #16161f;
+            padding-bottom: 5px;
+        }
+
+        .filter-links {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .filter-links li {
+            font-size: 14px;
+            color: #7e8587;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .filter-links li:hover, .filter-links li.active {
+            color: #b88e42;
+        }
+
+        /* JOBB OLDAL: Termékek rácsa */
+        .shop-content {
+            padding: 40px 50px;
+        }
+
+        /* Webshop felső navbar (Kosár ikon, stb) */
+        .shop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #16161f;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .shop-header .results-count {
+            font-size: 13px;
             color: #5e6669;
         }
 
-        /* Galéria */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-bottom: 50px;
+        .cart-status {
+            color: #fff;
+            font-size: 13px;
+            background-color: #13131a;
+            padding: 8px 15px;
+            border-radius: 4px;
+            border: 1px solid #16161f;
+            letter-spacing: 1px;
         }
 
-        .gallery-item {
-            background-color: #050507;
-            height: 150px;
-            border: 1px dashed #1a1a24;
+        .cart-status span {
+            color: #b88e42;
+            font-weight: bold;
+        }
+
+        /* Termékrács */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Terméklap */
+        .product-card {
+            background-color: rgba(13, 13, 17, 0.85);
+            border: 1px solid #16161f;
             border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            border-color: #b88e42;
+            box-shadow: 0 10px 20px rgba(184, 142, 66, 0.05);
+            transform: translateY(-3px);
+        }
+
+        /* Kamu kép helye */
+        .product-image {
+            background-color: #050507;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 11px;
-            color: #3e4445;
+            color: #2b2e30;
+            font-size: 12px;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #16161f;
+            font-weight: bold;
         }
 
-        /* ÚJ: Kontakt Űrlap */
-        .contact-section {
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-tag {
+            font-size: 10px;
+            color: #b88e42;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 13px;
+            color: #7e8587;
+            margin-bottom: 15px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        /* Ár helyett egyedi státusz szöveg a NAV ellen */
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #16161f;
+        }
+
+        .product-status {
+            font-size: 12px;
+            color: #5e6669;
+            font-weight: bold;
+        }
+
+        /* Kosár gomb helyett kapcsolat gomb ami levisz a formhoz */
+        .shop-btn {
+            background-color: transparent;
+            color: #b88e42;
+            border: 1px solid #b88e42;
+            padding: 8px 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .shop-btn:hover {
+            background-color: #b88e42;
+            color: #050507;
+        }
+
+        /* Kapcsolat Szekció (Konzultációs pult) */
+        .checkout-anchor {
             background-color: rgba(13, 13, 17, 0.9);
-            border: 1px solid #1a1a24;
+            border: 1px solid #16161f;
             padding: 40px;
             border-radius: 4px;
+            margin-top: 40px;
+        }
+
+        .checkout-anchor h3 {
+            color: #fff;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
         }
 
         .form-group {
@@ -191,7 +274,7 @@
         .form-group label {
             display: block;
             color: #fff;
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 8px;
@@ -228,28 +311,29 @@
         .submit-btn:hover {
             background-color: #b88e42;
             color: #050507;
-            box-shadow: 0 0 15px rgba(184, 142, 66, 0.3);
+            box-shadow: 0 0 15px rgba(184, 142, 66, 0.2);
         }
 
-        .location-text {
-            margin-top: 25px;
-            font-size: 13px;
-            color: #5e6669;
-            text-align: center;
+        /* Fontos jogi disclaimer */
+        .disclaimer {
+            font-size: 11px;
+            color: #444;
+            margin-top: 30px;
+            text-align: justify;
+            line-height: 1.4;
         }
 
-        /* Mobil nézet javítása */
+        /* Mobil nézet optimalizáció */
         @media (max-width: 768px) {
-            .main-layout {
+            .shop-layout {
                 grid-template-columns: 1fr;
             }
-            .sidebar {
+            .shop-sidebar {
                 border-right: none;
-                border-bottom: 1px solid #1a1a24;
-                padding: 30px;
+                border-bottom: 1px solid #16161f;
             }
-            .content-area {
-                padding: 30px;
+            .shop-content {
+                padding: 20px;
             }
         }
     </style>
@@ -258,80 +342,143 @@
 
     <div class="top-bar"></div>
 
-    <div class="main-layout">
+    <div class="shop-layout">
         
-        <!-- BAL OLDAL: Fix sáv -->
-        <aside class="sidebar">
-            <div class="brand">
-                <h1>fegyverfestes<span>.hu</span></h1>
-                <p>// tactical tech & labs</p>
+        <!-- BAL OLDAL: Shop Kategóriák és Kereső -->
+        <aside class="shop-sidebar">
+            <div class="sidebar-top">
+                <div class="logo">
+                    <h1>fegyverfestes<span>.hu</span></h1>
+                    <p>// tech & custom works</p>
+                </div>
+
+                <div class="search-box">Keresés a minták között...</div>
+
+                <div class="filter-group">
+                    <h4>Kategóriák</h4>
+                    <ul class="filter-links">
+                        <li class="active">Összes projekt (5)</li>
+                        <li>Fegyver festés</li>
+                        <li>Kiegészítő festés</li>
+                        <li>Belső elektronika</li>
+                        <li>Custom Akkumulátorok</li>
+                    </ul>
+                </div>
             </div>
             
-            <div class="sidebar-footer">
-                <p>Status: Portfólió</p>
-                <p>All tech < 7.5J</p>
-                <p>&copy; 2026</p>
+            <div style="font-size: 11px; color: #3e4445; letter-spacing: 1px; text-transform: uppercase;">
+                <p>Mód: Archívum</p>
+                <p>Minden replika < 7.5J</p>
             </div>
         </aside>
 
-        <!-- JOBB OLDAL: Tartalom -->
-        <main class="content-area">
+        <!-- JOBB OLDAL: A Webshop felület -->
+        <main class="shop-content">
             
-            <section class="hero-text">
-                Két airsoft tech-rajongó privát blogja és referencia oldala. Itt dokumentáljuk a saját részre készített egyedi munkáinkat és elektronikai kísérleteinket. Kereskedelmi tevékenységet nem folytatunk, az oldal kizárólag bemutató jellegű.
-            </section>
-
-            <!-- Divíziók -->
-            <h2 class="section-title">01 / Fejlesztési Területek</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Fegyver & Kiegészítő Festés</h3>
-                    <p>Esztétikai álcafestések (Camo), koptatott effektek és egyedi minták. A replikákon túl kiegészítők felületkezelését is dokumentáljuk:</p>
-                    <ul class="addon-list">
-                        <li>Optikák / Irányzékok</li>
-                        <li>Hangtompítók / Tracer egységek</li>
-                        <li>Anpeq dobozok / Lámpák</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Prototípus ETU / MOSFET</h3>
-                    <p>Saját tervezésű NYÁK-lapok, mikrokontrolleres vezérlések és alacsony belső ellenállású FET-ek tesztelése a maximális tűzgyorsaságért.</p>
-                </div>
-                <div class="card">
-                    <h3>Power Cells</h3>
-                    <p>Magas kisütési áramú ipari cellák ponthegesztése és belső védelmi elektronikák (BMS) kalibrálása egyedi mérethez.</p>
-                </div>
+            <div class="shop-header">
+                <div class="results-count">5 egyedi projekt megjelenítve</div>
+                <div class="cart-status">KAPCSOLAT: <span>ONLINE</span></div>
             </div>
 
-            <!-- Galéria -->
-            <h2 class="section-title">02 / Képi Archívum</h2>
-            <div class="gallery">
-                <div class="gallery-item">[ log_01 ]</div>
-                <div class="gallery-item">[ log_02 ]</div>
-                <div class="gallery-item">[ log_03 ]</div>
-                <div class="gallery-item">[ log_04 ]</div>
+            <!-- Termékek / Projektek -->
+            <div class="product-grid">
+                
+                <!-- 1. TERMÉK -->
+                <div class="product-card">
+                    <div class="product-image">[ KÉP HELYE ]</div>
+                    <div class="product-info">
+                        <div class="product-tag">Custom Paint</div>
+                        <div class="product-title">Fegyver váz festés</div>
+                        <div class="product-description">Koptatott, többrétegű terepminták (Camo) felvitele komplett airsoft testekre.</div>
+                        <div class="product-meta">
+                            <div class="product-status">REFERENCIA</div>
+                            <a href="#contact" class="shop-btn">Kérj infót</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. TERMÉK -->
+                <div class="product-card">
+                    <div class="product-image">[ KÉP HELYE ]</div>
+                    <div class="product-info">
+                        <div class="product-tag">Kiegészítő Festés</div>
+                        <div class="product-title">Optika / Irányzék</div>
+                        <div class="product-description">Red dot-ok, távcsövek és szerelékek precíziós maszkolásos festése üvegek védelmével.</div>
+                        <div class="product-meta">
+                            <div class="product-status">REFERENCIA</div>
+                            <a href="#contact" class="shop-btn">Kérj infót</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. TERMÉK -->
+                <div class="product-card">
+                    <div class="product-image">[ KÉP HELYE ]</div>
+                    <div class="product-info">
+                        <div class="product-tag">Kiegészítő Festés</div>
+                        <div class="product-title">Hangtompító / Tracer</div>
+                        <div class="product-description">Külső csőhosszabbítások, hangtompító imitációk és tracer egységek hőálló texturálása.</div>
+                        <div class="product-meta">
+                            <div class="product-status">REFERENCIA</div>
+                            <a href="#contact" class="shop-btn">Kérj infót</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. TERMÉK -->
+                <div class="product-card">
+                    <div class="product-image">[ KÉP HELYE ]</div>
+                    <div class="product-info">
+                        <div class="product-tag">Electronics</div>
+                        <div class="product-title">Saját Prototípus MOSFET</div>
+                        <div class="product-description">Egyedi NYÁK tervezésű elektronika, aktív fékkel és extrém alacsony belső ellenállással.</div>
+                        <div class="product-meta">
+                            <div class="product-status">PROTOTÍPUS</div>
+                            <a href="#contact" class="shop-btn">Kérj infót</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. TERMÉK -->
+                <div class="product-card">
+                    <div class="product-image">[ KÉP HELYE ]</div>
+                    <div class="product-info">
+                        <div class="product-tag">Power Systems</div>
+                        <div class="product-title">Custom Li-Ion Pakkok</div>
+                        <div class="product-description">Nagy teljesítményű cellák professzionális ponthegesztése egyedi tus-méretekre szabva.</div>
+                        <div class="product-meta">
+                            <div class="product-status">TESZTELÉS ALATT</div>
+                            <a href="#contact" class="shop-btn">Kérj infót</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- ÚJ: Kontakt Szekció -->
-            <h2 class="section-title">03 / Konzultáció & Kapcsolat</h2>
-            <section class="contact-section">
-                <form onsubmit="event.preventDefault(); alert('Ez egy bemutató portfólió oldal, az üzenetküldés nem aktív.');">
+            <!-- ÚJ: Kontakt / Üzenetküldő (A Kosár helyett) -->
+            <div class="checkout-anchor" id="contact">
+                <h3>// Projekt Egyeztetés (Kapcsolatfelvétel)</h3>
+                <form onsubmit="event.preventDefault(); alert('Ez egy bemutató portfólió oldal, az üzenetküldés jelenleg offline.');">
                     <div class="form-group">
                         <label for="name">Hívójel / Név</label>
                         <input type="text" id="name" required placeholder="Pl. Ghost">
                     </div>
                     <div class="form-group">
-                        <label for="message">Üzenet (Technikai kérdés / Tapasztalatcsere)</label>
-                        <textarea id="message" rows="5" required placeholder="Milyen technikával festettétek az optikát? / Érdekel a MOSFET kapcsolási rajza..."></textarea>
+                        <label for="message">Melyik építés/technika érdekel? (Kérdés / Tapasztalatcsere)</label>
+                        <textarea id="message" rows="5" required placeholder="Szia! Érdekelne, hogyan oldottátok meg a hangtompító festését..."></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Üzenet küldése</button>
+                    <button type="submit" class="submit-btn">Adatlap küldése</button>
                 </form>
-                
-                <div class="location-text">
-                    Személyesen megtalálsz minket a hétvégi játékokon a bázisunkon:<br>
-                    <strong style="color: #fff; letter-spacing: 1px; display: inline-block; margin-top: 5px;">[ IDE ÍRD A PÁLYA NEVÉT ]</strong>
+
+                <p style="margin-top: 25px; text-align: center; font-size: 13px; color: #5e6669;">
+                    Személyes konzultáció és tapasztalatcsere a hétvégi játékokon kint a pályán:<br>
+                    <strong style="color: #fff; display: inline-block; margin-top: 5px; letter-spacing: 1px;">[ IDE ÍRD A PÁLYA NEVÉT ]</strong>
+                </p>
+
+                <div class="disclaimer">
+                    <strong>JOGI NYILATKOZAT:</strong> Ez a weboldal kizárólag két magánszemély személyes hobbi-portfóliója és kísérleti naplója, gazdasági tevékenységet, kereskedelmi értékesítést nem végez (árak nincsenek feltüntetve). Az oldalon szereplő minden eszköz és leírás 7.5 Joule csőtorkolati energia alatti, a hatályos magyar törvényeknek megfelelő lőfegyvernek nem minősülő airsoft játékfegyverekre vonatkozik.
                 </div>
-            </section>
+            </div>
 
         </main>
     </div>
