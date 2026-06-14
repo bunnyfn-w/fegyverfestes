@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Airsoft Tech & Paint</title>
+    <title>Airsoft Tech & Paint Projekt</title>
     <style>
-        /* Alapbeállítások - Modern sötét dizájn */
         * {
             margin: 0;
             padding: 0;
@@ -19,15 +18,11 @@
             line-height: 1.6;
         }
 
-        /* Navigáció */
         header {
             background-color: #1a1a1a;
             padding: 20px;
             text-align: center;
             border-bottom: 3px solid #ff6600;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
         header h1 {
@@ -41,17 +36,15 @@
             color: #888;
         }
 
-        /* Fő konténer */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* Hős szekció (Bemutatkozás) */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1595590424283-b8f17842773f?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover;
-            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1595590424283-b8f17842773f?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover;
+            padding: 40px 20px;
             text-align: center;
             border-radius: 8px;
             margin-bottom: 40px;
@@ -60,7 +53,7 @@
         .hero h2 {
             color: #fff;
             margin-bottom: 15px;
-            font-size: 28px;
+            font-size: 24px;
         }
 
         .hero p {
@@ -69,17 +62,15 @@
             color: #ccc;
         }
 
-        /* Szekció címek */
         .section-title {
             color: #ff6600;
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
             margin-bottom: 25px;
             text-transform: uppercase;
-            font-size: 20px;
+            font-size: 18px;
         }
 
-        /* Szolgáltatások / Tech részletek */
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -92,11 +83,6 @@
             padding: 25px;
             border-radius: 8px;
             border-left: 4px solid #ff6600;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
         }
 
         .card h3 {
@@ -104,7 +90,6 @@
             margin-bottom: 10px;
         }
 
-        /* Portfólió Galéria helye */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -122,50 +107,30 @@
             color: #555;
             border: 2px dashed #333;
             font-weight: bold;
-            position: relative;
-            overflow: hidden;
         }
 
-        /* Ide jönnek majd a saját képeitek (placeholder színezés helyett) */
         .gallery-item::before {
-            content: "Kép helye";
-            color: #888;
+            content: "Saját fotó helye";
+            color: #666;
         }
 
-        /* Hol találsz meg minket? */
-        .location-box {
-            background-color: #1e251f; /* Enyhe zöldes-katonai beütés */
-            border: 1px solid #2e3b2f;
-            padding: 30px;
+        .info-box {
+            background-color: #1a1a1a;
+            padding: 25px;
             border-radius: 8px;
             text-align: center;
-            margin-bottom: 40px;
+            border: 1px solid #333;
         }
 
-        .location-box h3 {
-            color: #4caf50;
+        .info-box p {
             margin-bottom: 10px;
-            font-size: 22px;
         }
 
-        .notice {
-            background-color: #2b1d1d;
-            border: 1px solid #5c2323;
-            color: #ff8888;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 13px;
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        /* Lábléc */
         footer {
             text-align: center;
             padding: 30px;
-            color: #666;
+            color: #555;
             font-size: 12px;
-            background-color: #1a1a1a;
             margin-top: 60px;
         }
     </style>
@@ -173,34 +138,34 @@
 <body>
 
     <header>
-        <h1>CUSTOM AIRSOFT TECH</h1>
-        <p>Egyedi külső festés & Saját fejlesztésű elektronika</p>
+        <h1>AIRSOFT DIY TECH PROJECT</h1>
+        <p>Saját építések, egyedi festések és elektronikai kísérletek</p>
     </header>
 
     <div class="container">
 
         <section class="hero">
-            <h2>Hozzuk ki a maximumot a replikádból!</h2>
-            <p>Két fiatal airsoft-rajongó tech-műhelye. Nem tömegtermékeket gyártunk: egyedi fegyverfestéssel és saját tervezésű MOSFET/ETU elektronikákkal foglalkozunk, hogy a fegyvered verhetetlen legyen a pályán.</p>
+            <h2>Üdv a hobbi oldalunkon!</h2>
+            <p>Két airsoft-kedvelő srác technikai blogja és portfóliója. Itt gyűjtjük össze a saját magunknak készített custom festéseket, MOSFET kísérleteket és egyéb belső tuning megoldásokat.</p>
         </section>
 
-        <h2 class="section-title">Amit vállalunk / Fejlesztéseink</h2>
+        <h2 class="section-title">Amikkel kísérletezünk</h2>
         <section class="services">
             <div class="card">
-                <h3>Custom Külső Festés</h3>
-                <p>Koptatott terepminták, egyedi színkombinációk és precíz maszkolásos technikák. Minden festés egyedi projekt, nincs két ugyanolyan darab.</p>
+                <h3>Custom Paint</h3>
+                <p>Különböző maszkolási, koptatási és terepminta-festési technikák kipróbálása saját fegyvertesteken.</p>
             </div>
             <div class="card">
-                <h3>Saját MOSFET & ETU</h3>
-                <p>Saját tervezésű és építésű elektronikai áramkörök. Gyorsabb elsütő-reakció, akkumulátor-védelem és extrém áramtűrés a legdurvább LiPo-khoz is.</p>
+                <h3>Saját MOSFET / ETU</h3>
+                <p>Egyedi áramkörök tervezése és tesztelése a gyorsabb elsütő-reakció és a LiPo akku védelem érdekében.</p>
             </div>
             <div class="card">
-                <h3>Custom Akku Pakkok</h3>
-                <p>Minőségi cellákból, professzionális ponthegesztéssel összeállított egyedi akkumulátorok, amik pontosan beférnek a fegyveragyba vagy a tusba.</p>
+                <h3>Akku összeállítások</h3>
+                <p>Különböző cellák összeépítése és tesztelése egyedi méretű tusokhoz és akkutartókhoz.</p>
             </div>
         </section>
 
-        <h2 class="section-title">Eddigi munkáink (Portfólió)</h2>
+        <h2 class="section-title">Elkészült saját projektek (Galéria)</h2>
         <section class="gallery">
             <div class="gallery-item"></div>
             <div class="gallery-item"></div>
@@ -208,23 +173,16 @@
             <div class="gallery-item"></div>
         </section>
 
-        <h2 class="section-title">Kapcsolat & Átvétel</h2>
-        <section class="location-box">
-            <h3>Személyesen a pályán!</h3>
-            <p>Webshopunk és postai kiszállításunk <strong>nincs</strong>.</p>
-            <p style="margin-top: 10px;">A kész termékeinket megtekintheted, kipróbálhatod és átveheted a következő helyszínen:</p>
-            <p style="color: #fff; font-weight: bold; margin: 15px 0; font-size: 18px;">[IDE ÍRJÁTOK A PÁLYA NEVÉT]</p>
-            <p>Ha egyedi festést vagy elektronika beépítést szeretnél, keress meg minket kint a szombati játékokon egy egyeztetésre!</p>
-
-            <div class="notice">
-                <strong>⚠️ Jogi nyilatkozat:</strong> Oldalunk kizárólag bemutató (portfólió) jelleggel működik, közvetlen értékesítést vagy online kereskedelmet nem folytat. Kizárólag a hatályos magyar jogszabályoknak megfelelő, 7,5 Joule torkolati energia alatti, lőfegyvernek nem minősülő airsoft játékfegyverek (légfegyverek) esztétikai és belső tuningolásával foglalkozunk.
-            </div>
+        <h2 class="section-title">Információ</h2>
+        <section class="info-box">
+            <p>Ez az oldal egy **személyes hobbi portfólió**, nem webáruház és nem gazdasági tevékenység.</p>
+            <p>Kereskedelmi szolgáltatást nem nyújtunk. Ha kérdésed van a saját építéseinkkel kapcsolatban, vagy összefutnál velünk dumálni egyet a technikai részletekről, megtalálsz minket a hétvégi játékokon a helyi airsoft pályán!</p>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Custom Airsoft Tech. Minden jog fenntartva. | Készült a közösség számára.</p>
+        <p>&copy; 2026 Airsoft DIY Tech. Kizárólag bemutató jelleggel.</p>
     </footer>
 
 </body>
