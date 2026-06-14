@@ -230,7 +230,7 @@
             text-transform: uppercase;
         }
 
-        /* Gomb ami levisz a kontaktig */
+        /* Gomb ami azonnal tárcsázza a számot */
         .shop-btn {
             background-color: #1e2327;
             color: #ffffff;
@@ -252,75 +252,58 @@
             border-color: #4e6650;
         }
 
-        /* Kontakt Panel */
-        .checkout-anchor {
+        /* ÚJ: Telefonszámos Kapcsolat Szekció */
+        .phone-contact-box {
             background-color: #161a1d;
             border: 1px solid #22282d;
-            padding: 30px;
+            padding: 40px 30px;
             border-radius: 4px;
             margin-top: 40px;
+            text-align: center;
         }
 
-        .checkout-anchor h3 {
+        .phone-contact-box h3 {
             color: #ffffff;
-            font-size: 16px;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 20px;
-            border-left: 3px solid #4e6650;
-            padding-left: 10px;
+            margin-bottom: 25px;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
+        /* Nagy kattintható hívás panel */
+        .phone-link {
+            display: inline-block;
+            background-color: #1e2521;
+            border: 2px dashed #4e6650;
             color: #ffffff;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            font-size: 28px;
+            font-weight: 900;
+            padding: 20px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            font-family: monospace;
+            box-shadow: inset 0 0 15px rgba(78, 102, 80, 0.1);
+            margin-bottom: 15px;
         }
 
-        .form-group input, .form-group textarea {
-            width: 100%;
-            background-color: #0b0d0e;
-            border: 1px solid #22282d;
-            padding: 12px;
-            color: #ffffff;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 14px;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: #4e6650;
-        }
-
-        .submit-btn {
+        .phone-link:hover {
             background-color: #4e6650;
-            color: #ffffff;
-            border: none;
-            padding: 12px 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-            border-radius: 4px;
-            width: 100%; /* Mobilon így könnyebb megnyomni */
+            border-style: solid;
+            box-shadow: 0 0 20px rgba(78, 102, 80, 0.3);
         }
 
-        .submit-btn:hover {
-            background-color: #3b4d3d;
+        .phone-note {
+            font-size: 12px;
+            color: #8395a7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
         }
 
         .location-text {
-            margin-top: 25px;
-            text-align: center;
+            margin-top: 30px;
             font-size: 13px;
             color: #8395a7;
             background-color: #0b0d0e;
@@ -332,7 +315,7 @@
         .disclaimer {
             font-size: 11px;
             color: #4f5d65;
-            margin-top: 25px;
+            margin-top: 30px;
             text-align: justify;
             line-height: 1.4;
         }
@@ -344,10 +327,10 @@
             text-transform: uppercase;
         }
 
-        /* 📱 MOBIL OPTIMALIZÁLÁS (Media Query) 📱 */
+        /* 📱 MOBIL OPTIMALIZÁLÁS 📱 */
         @media (max-width: 768px) {
             .shop-layout {
-                grid-template-columns: 1fr; /* Egymás alá rakja a sávot és a tartalmat */
+                grid-template-columns: 1fr;
             }
 
             .shop-sidebar {
@@ -362,31 +345,33 @@
             }
 
             .search-box, .filter-group {
-                display: none; /* Mobilon elrejtjük a kamu szűrőket, hogy ne foglalja a helyet */
+                display: none;
             }
 
             .shop-content {
-                padding: 20px 15px; /* Kisebb belső margó mobilon, hogy nagyobb legyen a tartalom */
+                padding: 20px 15px;
             }
 
             .shop-header {
                 margin-bottom: 25px;
-                flex-direction: column; /* Egymás alá rakja a darabszámot és a státuszt */
+                flex-direction: column;
                 gap: 10px;
                 text-align: center;
             }
 
             .product-grid {
-                grid-template-columns: 1fr; /* Mobilon 1 oszlopos lesz a termék rács, szép nagy kártyákkal */
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
 
             .product-image {
-                height: 220px; /* Telefonon kicsit magasabb képablak jobban mutat */
+                height: 220px;
             }
 
-            .checkout-anchor {
-                padding: 20px 15px;
+            .phone-link {
+                font-size: 22px;
+                padding: 15px 20px;
+                width: 100%; /* Telefonon kitölti a képernyőt, hogy könnyű legyen rányomni */
             }
         }
     </style>
@@ -397,7 +382,7 @@
 
     <div class="shop-layout">
         
-        <!-- BAL OLDAL: Navigáció (Mobilon ez lesz felül) -->
+        <!-- BAL OLDAL: Navigáció (Mobilon felül) -->
         <aside class="shop-sidebar">
             <div class="sidebar-top">
                 <div class="logo">
@@ -425,12 +410,12 @@
             </div>
         </aside>
 
-        <!-- JOBB OLDAL: Termékek (Mobilon ez jön a menü után) -->
+        <!-- JOBB OLDAL: Termékek -->
         <main class="shop-content">
             
             <div class="shop-header">
                 <div class="results-count">5 egyedi projekt feltöltve</div>
-                <div class="cart-status">KAPCSOLAT: <span>ONLINE</span></div>
+                <div class="cart-status">KAPCSOLAT: <span>TELEFONON</span></div>
             </div>
 
             <!-- Termékek rácsa -->
@@ -445,7 +430,8 @@
                         <div class="product-description">Koptatott, többrétegű álcafestések (Camo) felvitele komplett fegyvertestekre.</div>
                         <div class="product-meta">
                             <div class="product-status">REFERENCIA</div>
-                            <a href="#contact" class="shop-btn">Kérj infót</a>
+                            <!-- Cseréld ki a számodra a +36... részt -->
+                            <a href="tel:+36201234567" class="shop-btn">Hívás most</a>
                         </div>
                     </div>
                 </div>
@@ -459,7 +445,7 @@
                         <div class="product-description">Red dot-ok, távcsövek és kiegészítő szerelékek maszkolásos festése a lencsék teljes védelmével.</div>
                         <div class="product-meta">
                             <div class="product-status">REFERENCIA</div>
-                            <a href="#contact" class="shop-btn">Kérj infót</a>
+                            <a href="tel:+36201234567" class="shop-btn">Hívás most</a>
                         </div>
                     </div>
                 </div>
@@ -473,7 +459,7 @@
                         <div class="product-description">Külső csőhosszabbítások, hangtompító imitációk és tracer egységek kopásálló texturálása.</div>
                         <div class="product-meta">
                             <div class="product-status">REFERENCIA</div>
-                            <a href="#contact" class="shop-btn">Kérj infót</a>
+                            <a href="tel:+36201234567" class="shop-btn">Hívás most</a>
                         </div>
                     </div>
                 </div>
@@ -487,7 +473,7 @@
                         <div class="product-description">Saját tervezésű áramkör aktív fékkel és magas áramtűréssel a gyorsabb elsütő-reakcióért.</div>
                         <div class="product-meta">
                             <div class="product-status">PROTOTÍPUS</div>
-                            <a href="#contact" class="shop-btn">Kérj infót</a>
+                            <a href="tel:+36201234567" class="shop-btn">Hívás most</a>
                         </div>
                     </div>
                 </div>
@@ -501,30 +487,24 @@
                         <div class="product-description">Nagy teljesítményű cellák precíziós ponthegesztése egyedi tus- és akkutartó méretekre szabva.</div>
                         <div class="product-meta">
                             <div class="product-status">TESZTELÉS ALATT</div>
-                            <a href="#contact" class="shop-btn">Kérj infót</a>
+                            <a href="tel:+36201234567" class="shop-btn">Hívás most</a>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Kapcsolati panel -->
-            <div class="checkout-anchor" id="contact">
-                <h3>// Projekt Egyeztetés (Kapcsolatfelvétel)</h3>
-                <form onsubmit="event.preventDefault(); alert('Ez egy bemutató portfólió oldal, az üzenetküldés jelenleg offline.');">
-                    <div class="form-group">
-                        <label for="name">Hívójel / Név</label>
-                        <input type="text" id="name" required placeholder="Pl. Ghost">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Melyik építés/technika érdekel? (Kérdés / Tapasztalatcsere)</label>
-                        <textarea id="message" rows="5" required placeholder="Szia! Érdekelne az optika vagy a hangtompító festése..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Adatlap küldése</button>
-                </form>
+            <!-- Kapcsolati panel (Telefonszámmal) -->
+            <div class="phone-contact-box">
+                <h3>// Forródrót / Tapasztalatcsere</h3>
+                
+                <!-- Cseréld ki a tel: után és a szövegben is a saját számodra -->
+                <a href="tel:+36201234567" class="phone-link">+36 20 123 4567</a>
+                
+                <p class="phone-note">Kérdésed van az építésekről? Kattints a számra és hívj minket!</p>
 
                 <div class="location-text">
-                    Személyes konzultáció és tapasztalatcsere a hétvégi játékokon kint a pályán:<br>
+                    Személyesen is megtalálsz minket a hétvégi játékokon kint a pályán:<br>
                     <strong style="color: #ffffff; display: inline-block; margin-top: 5px; letter-spacing: 1px;">[ IDE ÍRD A PÁLYA NEVÉT ]</strong>
                 </div>
 
